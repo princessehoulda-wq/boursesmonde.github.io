@@ -3178,6 +3178,20 @@ function toggleAustraliaGuide() {
     btn.innerHTML = '📖 Voir les 3 bourses australiennes ▼';
   }
 }
+  
+function toggleDAADGuide() {
+  const content = document.getElementById('daadContent');
+  const btn = document.getElementById('daadToggleBtn');
+  if (!content || !btn) return;
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    btn.innerHTML = '📖 Masquer le guide ▲';
+  } else {
+    content.style.display = 'none';
+    btn.innerHTML = '📖 Voir le guide complet ▼';
+  }
+}
+
 
 
 function filtrerPays(pays) {
@@ -3198,6 +3212,10 @@ function filtrerPays(pays) {
     const australiaBanner = document.getElementById('australiaBanner');
   if (australiaBanner) {
     australiaBanner.style.display = (pays === 'Australie') ? 'block' : 'none';
+  }
+    const daadBanner = document.getElementById('daadBanner');
+  if (daadBanner) {
+    daadBanner.style.display = (pays === 'Allemagne') ? 'block' : 'none';
   }
   const searchBourses = document.getElementById('searchInput2');
   const terme = searchBourses ? searchBourses.value.toLowerCase().trim() : '';
