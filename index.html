@@ -3023,6 +3023,10 @@ function filtrerPays(pays) {
   if (hungaryBanner) {
     hungaryBanner.style.display = (pays === 'Hongrie') ? 'block' : 'none';
   }
+    const australiaBanner = document.getElementById('australiaBanner');
+  if (australiaBanner) {
+    australiaBanner.style.display = (pays === 'Australie') ? 'block' : 'none';
+  }
   const searchBourses = document.getElementById('searchInput2');
   const terme = searchBourses ? searchBourses.value.toLowerCase().trim() : '';
   appliquerFiltres(terme);
