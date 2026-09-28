@@ -2993,6 +2993,20 @@ function toggleGuideHongrie() {
     btn.innerHTML = '📖 Voir le guide complet ▼';
   }
 }
+  
+function toggleAustraliaGuide() {
+  const content = document.getElementById('australiaContent');
+  const btn = document.getElementById('australiaToggleBtn');
+  if (!content || !btn) return;
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    btn.innerHTML = '📖 Masquer les bourses ▲';
+  } else {
+    content.style.display = 'none';
+    btn.innerHTML = '📖 Voir les 3 bourses australiennes ▼';
+  }
+}
+
 
 function filtrerPays(pays) {
   paysActif = pays;
