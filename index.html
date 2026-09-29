@@ -2174,6 +2174,126 @@
       </div>
 
     </div>
+    <!-- BANDEAU SPÉCIAL JAPON - MEXT -->
+    <div id="mextBanner" style="display: none; background: linear-gradient(135deg, #fee2e2, #fef2f2); border-left: 6px solid #dc2626; padding: 24px; border-radius: 14px; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(220, 38, 38, 0.15);">
+      
+      <h3 style="color: #991b1b; margin-bottom: 12px; font-size: 1.3rem;">
+        🇯🇵 Guide complet : Bourse MEXT 2027-2028
+      </h3>
+      
+      <p style="color: #7f1d1d; font-size: 1rem; line-height: 1.7; margin-bottom: 18px;">
+        La <strong>bourse du gouvernement japonais</strong> (Monbukagakusho) pour les étudiants internationaux. Elle finance <strong>100% de vos études</strong> au Japon, avec frais, allocation mensuelle, billet d'avion et assurance. Plus de <strong>10 000 étudiants</strong> de 150+ pays en bénéficient chaque année.
+      </p>
+
+      <button onclick="toggleMEXTGuide()" id="mextToggleBtn" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 12px 28px; border: none; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; margin-bottom: 20px; font-family: inherit;">
+        📖 Voir le guide complet ▼
+      </button>
+
+      <div id="mextContent" style="display: none;">
+        
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">💰 Ce que la bourse couvre</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>✅ <strong>Frais de scolarité</strong> : 100% pris en charge</li>
+          <li>✅ <strong>Allocation mensuelle</strong> : ~143 000 à 145 000 ¥/mois (~900 €)</li>
+          <li>✅ <strong>Billet d'avion</strong> : Aller-retour payé</li>
+          <li>✅ <strong>Logement</strong> : Aide à la recherche ou résidence universitaire</li>
+          <li>✅ <strong>Assurance santé</strong> : Couverture complète</li>
+          <li>✅ <strong>Frais d'installation</strong> : À l'arrivée</li>
+          <li>✅ <strong>Cours de japonais</strong> : 6 mois à 1 an gratuit</li>
+        </ul>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">🎓 Niveaux éligibles</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>📚 <strong>Licence (Undergraduate)</strong> : 5 ans (dont 1 an de japonais)</li>
+          <li>🎓 <strong>Master (Research Student)</strong> : 2 ans</li>
+          <li>🔬 <strong>Doctorat (PhD)</strong> : 3 ans</li>
+          <li>📖 <strong>Formation professionnelle</strong> : 3 ans</li>
+          <li>👨‍🏫 <strong>Formation d'enseignants</strong> : 1,5 an</li>
+        </ul>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">📅 Dates clés 2027-2028</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>📌 <strong>Via Ambassade</strong> : Avril à Mai 2027</li>
+          <li>📌 <strong>Via Université</strong> : Décembre 2026 à Janvier 2027</li>
+          <li>📝 <strong>Examens écrits</strong> : Juin-Juillet 2027</li>
+          <li>📊 <strong>Résultats</strong> : Août-Septembre 2027</li>
+          <li>🎓 <strong>Début des cours</strong> : Avril ou Octobre 2028</li>
+        </ul>
+        <p style="color: #92400e; font-size: 0.9rem; font-style: italic;">
+          ⚠️ Les dates exactes dépendent de l'ambassade du Japon dans votre pays.
+        </p>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">✅ Conditions d'éligibilité</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>🌍 <strong>Être ressortissant</strong> d'un pays éligible (Gabon, Cameroun, Sénégal, Côte d'Ivoire...)</li>
+          <li>📅 <strong>Âge</strong> : 17-24 ans (licence) ou moins de 35 ans (master/doctorat)</li>
+          <li>🎓 <strong>Diplôme requis</strong> : Bac (licence), Licence (master), Master (doctorat)</li>
+          <li>📊 <strong>Excellents résultats</strong> académiques</li>
+          <li>🌐 <strong>Anglais ou japonais</strong> (selon le programme)</li>
+          <li>💚 <strong>Bonne santé</strong> physique et mentale</li>
+          <li>🚫 <strong>Ne pas avoir déjà été boursier MEXT</strong></li>
+        </ul>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">📝 Comment postuler</h4>
+        <ol style="color: #7f1d1d; line-height: 1.8; padding-left: 24px;">
+          <li>Choisir <strong>une seule</strong> voie : <strong>Ambassade</strong> ou <strong>Université</strong></li>
+          <li>Récupérer les formulaires auprès de l'ambassade du Japon</li>
+          <li>Remplir le dossier (formulaire + documents)</li>
+          <li>Passer les <strong>examens écrits</strong> (japonais, anglais, mathématiques, matières spécifiques)</li>
+          <li>Passer l'<strong>entretien</strong> (si présélectionné)</li>
+          <li>Être recommandé par l'ambassade au MEXT</li>
+          <li>Chercher une université d'accueil (avec l'aide du MEXT)</li>
+          <li>Recevoir la confirmation finale (août-septembre)</li>
+        </ol>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">📝 Documents obligatoires</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>📄 Formulaire de candidature (4 pages)</li>
+          <li>📋 <strong>Field of Study and Research Plan</strong> (projet d'études détaillé)</li>
+          <li>🎓 Diplômes et relevés de notes (traduits en anglais ou japonais)</li>
+          <li>💌 2 lettres de recommandation (dont 1 du directeur de recherche)</li>
+          <li>💉 Certificat médical (formulaire officiel MEXT)</li>
+          <li>📸 Photos d'identité récentes</li>
+          <li>🆔 Copie du passeport</li>
+          <li>📊 Résultats de tests (TOEFL, IELTS, JLPT...)</li>
+        </ul>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">🎯 Conseils pour réussir</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>✍️ <strong>Soignez le projet de recherche</strong> : c'est LE document clé</li>
+          <li>📚 <strong>Apprenez le japonais</strong> : un vrai plus pour l'entretien</li>
+          <li>🎯 <strong>Préparez les examens écrits</strong> : mathématiques, anglais, japonais</li>
+          <li>🔍 <strong>Contactez des professeurs</strong> japonais avant de postuler</li>
+          <li>💌 <strong>Lettres de recommandation fortes</strong> : de professeurs réputés</li>
+          <li>⏰ <strong>Soumettez tôt</strong> : les ambassades ont des dates strictes</li>
+          <li>🎯 <strong>Montrez votre projet de retour</strong> : impact pour votre pays</li>
+        </ul>
+
+        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 8px; margin: 20px 0;">
+          <p style="color: #92400e; margin: 0; font-size: 0.92rem;">
+            ⚠️ <strong>Attention aux arnaques !</strong> MEXT est <strong>100% gratuit</strong>. Ne payez JAMAIS un intermédiaire. La candidature se fait uniquement via l'ambassade du Japon ou directement auprès des universités japonaises.
+          </p>
+        </div>
+
+        <h4 style="color: #991b1b; margin: 20px 0 10px; font-size: 1.1rem;">🔗 Liens utiles</h4>
+        <ul style="color: #7f1d1d; line-height: 1.8; padding-left: 20px;">
+          <li>🌐 <a href="https://www.studyinjapan.go.jp" target="_blank" rel="noopener" class="inline-link">Study in Japan (site officiel)</a></li>
+          <li>📝 <a href="https://www.studyinjapan.go.jp/en/planning/scholarship/" target="_blank" rel="noopener" class="inline-link">Informations MEXT</a></li>
+          <li>🏫 <a href="https://www.mext.go.jp/en/policy/education/highered/title02/detail02/sdetail02/1373897.htm" target="_blank" rel="noopener" class="inline-link">Site officiel MEXT</a></li>
+        </ul>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px;">
+          <a href="https://www.studyinjapan.go.jp" target="_blank" rel="noopener" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 12px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.95rem;">
+            🌐 Site officiel
+          </a>
+          <a href="https://www.studyinjapan.go.jp/en/planning/scholarship/" target="_blank" rel="noopener" style="background: linear-gradient(135deg, #2d6cdf, #1a4d8f); color: white; padding: 12px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.95rem;">
+            📝 Postuler maintenant
+          </a>
+        </div>
+
+      </div>
+
+    </div>
 
 
     <div class="grid" id="boursesGrid"></div>
@@ -3455,6 +3575,20 @@ function toggleGKSGuide() {
     btn.innerHTML = '📖 Voir le guide complet ▼';
   }
 }
+  
+function toggleMEXTGuide() {
+  const content = document.getElementById('mextContent');
+  const btn = document.getElementById('mextToggleBtn');
+  if (!content || !btn) return;
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+    btn.innerHTML = '📖 Masquer le guide ▲';
+  } else {
+    content.style.display = 'none';
+    btn.innerHTML = '📖 Voir le guide complet ▼';
+  }
+}
+
 
 
 function filtrerPays(pays) {
@@ -3487,6 +3621,10 @@ function filtrerPays(pays) {
     const gksBanner = document.getElementById('gksBanner');
   if (gksBanner) {
     gksBanner.style.display = (pays === 'Corée du Sud') ? 'block' : 'none';
+  }
+    const mextBanner = document.getElementById('mextBanner');
+  if (mextBanner) {
+    mextBanner.style.display = (pays === 'Japon') ? 'block' : 'none';
   }
   const searchBourses = document.getElementById('searchInput2');
   const terme = searchBourses ? searchBourses.value.toLowerCase().trim() : '';
