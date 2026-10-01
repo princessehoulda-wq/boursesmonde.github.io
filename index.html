@@ -5987,9 +5987,20 @@ function ouvrirBourseParSlug(slug) {
         </div>
       </div>
 
-      <div class="detail-description">
-        <strong>Description :</strong><br>${b.description}
+           <div class="detail-description">
+        <strong>Description :</strong><br>
+        ${b.description}
       </div>
+
+      ${b.couvre ? `<div style="background:#f8fafc;padding:16px 20px;border-radius:12px;margin-bottom:16px;border-left:4px solid #2d6cdf;">
+        <div style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;color:#64748b;font-weight:700;margin-bottom:6px;">💰 Ce que couvre la bourse</div>
+        <div style="color:#334155;font-size:0.98rem;line-height:1.6;">${b.couvre}</div>
+      </div>` : ''}
+
+      ${b.public ? `<div style="background:#eff6ff;padding:16px 20px;border-radius:12px;margin-bottom:16px;border-left:4px solid #1e40af;">
+        <div style="font-size:0.85rem;text-transform:uppercase;letter-spacing:0.5px;color:#1e40af;font-weight:700;margin-bottom:6px;">🌍 Public éligible</div>
+        <div style="color:#1e3a8a;font-size:0.98rem;line-height:1.6;">${b.public}</div>
+      </div>` : ''}
 
       <div class="detail-actions">
         <a href="${b.lien}" class="btn-official" onclick="event.preventDefault(); redirigerVersSite('${b.lien}');">
