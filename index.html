@@ -5464,7 +5464,10 @@ function afficherBourses(liste) {
   if (!grid) return;
 
   if (liste.length === 0) {
-    grid.innerHTML = `<div class="empty"><h3>Aucune bourse trouvée</h3><p>Essayez un autre mot-clé ou un autre pays.</p></div>`;
+    grid.innerHTML = `<div class="empty">
+      <h3>Aucune bourse trouvée</h3>
+      <p>Essayez un autre mot-clé ou un autre pays.</p>
+    </div>`;
     return;
   }
 
@@ -5479,6 +5482,15 @@ function afficherBourses(liste) {
       </div>
       <h3>${b.titre}</h3>
       <p class="card-desc">${b.description}</p>
+      
+      ${b.couvre ? `<div style="background:#f8fafc;padding:10px 14px;border-radius:8px;margin-bottom:12px;font-size:0.85rem;color:#334155;">
+        <strong>💰 Ce que couvre la bourse :</strong> ${b.couvre}
+      </div>` : ''}
+      
+      ${b.public ? `<div style="background:#eff6ff;padding:10px 14px;border-radius:8px;margin-bottom:12px;font-size:0.85rem;color:#1e40af;">
+        <strong>🌍 Public éligible :</strong> ${b.public}
+      </div>` : ''}
+      
       <div class="card-meta">
         <span class="tag type">${b.type}</span>
         <span class="tag amount">💰 ${b.montant}</span>
