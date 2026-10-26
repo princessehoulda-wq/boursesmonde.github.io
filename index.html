@@ -5308,7 +5308,7 @@ function afficherPrets(region) {
         <div style="margin-bottom: 6px;"><strong>⏱️ Durée :</strong> ${p.duree}</div>
         <div><strong>💱 Devise :</strong> ${p.devise}</div>
       </div>
-      <a href="${p.lien}" target="_blank" rel="noopener" class="card-btn">Site officiel →</a>
+      <a href="${p.lien}" target="_blank" rel="noopener noreferrer" class="card-btn">Site officiel →</a>
     </article>
   `).join('');
 }
@@ -6006,7 +6006,7 @@ function ouvrirBourseParSlug(slug) {
       </div>` : ''}
 
       <div class="detail-actions">
-        <a href="${b.lien}" class="btn-official" onclick="event.preventDefault(); redirigerVersSite('${b.lien}');">
+        <a href="${b.lien}" target="_blank" rel="noopener noreferrer" class="btn-primary">Site officiel de la bourse →</a>
           🌐 Accéder au site officiel
         </a>
         <button class="btn-back" onclick="navigate('bourses')">← Retour aux bourses</button>
