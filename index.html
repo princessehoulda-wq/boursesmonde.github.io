@@ -5958,12 +5958,14 @@ function ouvrirBourseParSlug(slug) {
         <div style="color:#1e3a8a;font-size:0.98rem;line-height:1.6;">${b.public}</div>
       </div>` : ''}
 
-      <div class="detail-actions">
-        <a href="${b.lien}" target="_blank" rel="noopener noreferrer" class="btn-primary">Site officiel de la bourse →</a>
-          🌐 Accéder au site officiel
-        </a>
-        <button class="btn-back" onclick="navigate('bourses')">← Retour aux bourses</button>
-      </div>
+      <div style="margin: 24px 0; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+  <a href="${b.lien}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; padding: 14px 28px; background: #1a4d8f; color: white; border-radius: 10px; font-weight: 700; text-decoration: none; text-align: center;">
+    🌐 Accéder au site officiel
+  </a>
+  <button class="btn-secondary" onclick="navigate('bourses')" style="display: inline-block; padding: 14px 28px; background: transparent; border: 2px solid #1a4d8f; color: #1a4d8f; border-radius: 10px; font-weight: 700; cursor: pointer;">
+    ← Retour aux bourses
+  </button>
+</div>
 
       <div class="share-bar">
         <span class="share-bar-label">📤 Partager cette bourse :</span>
