@@ -1465,7 +1465,192 @@
     .footer-col h4 { font-size: 0.88rem; }
     .footer-col li { font-size: 0.8rem; margin-bottom: 5px; }
     .footer-col a { text-align: center; }
-  }     
+  }
+    /* ============================================================
+   NOUVEAU DESIGN MODERNE (Override CSS)
+   ============================================================ */
+
+/* 1. Couleurs globales */
+:root {
+  --primary: #0A1C54 !important; /* Bleu marine profond */
+  --primary-light: #2563EB !important; /* Bleu vif pour les boutons */
+  --bg-color: #F8FAFC !important; 
+  --text-main: #1E293B !important;
+  --text-muted: #64748B !important;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-main) !important;
+}
+
+/* 2. Le Header (Menu) */
+header {
+  background: white !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+.logo { font-weight: 800 !important; color: var(--primary) !important; }
+
+/* 3. Le Hero (Bandeau bleu foncé) */
+.hero {
+  background: var(--primary) !important;
+  color: white !important;
+  padding: 80px 24px 120px !important; /* Plus d'espace en bas pour la recherche */
+  border-radius: 0 0 30px 30px !important; /* Bords arrondis en bas */
+  position: relative !important;
+  overflow: hidden !important;
+  margin-bottom: 40px !important; /* Espace pour la recherche */
+}
+
+/* Cacher l'ancien triangle blanc en bas du hero */
+.hero::after { display: none !important; }
+
+/* Effet de cercles en fond */
+.hero::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50% !important; right: -20% !important;
+  width: 600px !important; height: 600px !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 50px rgba(255,255,255,0.02), 0 0 0 100px rgba(255,255,255,0.02) !important;
+}
+.hero h1 {
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 16px !important;
+}
+.hero p { color: #CBD5E1 !important; font-size: 1.1rem !important; }
+
+/* 4. La barre de recherche (qui chevauche) */
+.hero .search-box {
+  position: absolute !important;
+  bottom: -30px !important; /* Chevauchement */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90% !important;
+  max-width: 800px !important;
+  background: white !important;
+  padding: 10px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08) !important;
+  display: flex !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  z-index: 10 !important;
+}
+.hero .search-box input {
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  padding: 14px 20px !important;
+  font-size: 1rem !important;
+  flex: 1 !important;
+  outline: none !important;
+  background: white !important;
+  color: var(--text-main) !important;
+}
+.hero .search-box button {
+  background: var(--primary-light) !important;
+  color: white !important;
+  border-radius: 8px !important;
+  padding: 0 30px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+}
+
+/* 5. Les Statistiques */
+.stats {
+  margin-top: 60px !important; /* Pour laisser la place à la recherche */
+  gap: 16px !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+.stat {
+  background: white !important;
+  border: 1px solid #F1F5F9 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02) !important;
+  padding: 20px !important;
+}
+.stat-num { color: var(--primary-light) !important; font-size: 2.2rem !important; }
+.stat-label { color: var(--text-muted) !important; font-size: 0.9rem !important; font-weight: 500 !important; }
+
+/* 6. Les Filtres (Style Pilule) */
+.country-filter { justify-content: center !important; margin-bottom: 40px !important; }
+.country-btn {
+  background: white !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 30px !important;
+  padding: 10px 20px !important;
+  font-size: 0.9rem !important;
+  color: var(--text-main) !important;
+  transition: all 0.2s !important;
+}
+.country-btn:hover { border-color: var(--primary-light) !important; color: var(--primary-light) !important; }
+.country-btn.active { background: var(--primary-light) !important; border-color: var(--primary-light) !important; color: white !important; }
+
+/* 7. Les Cartes (Style Maquette) */
+.grid { gap: 24px !important; }
+.card {
+  background: white !important;
+  border-radius: 16px !important;
+  border: 1px solid #F1F5F9 !important;
+  padding: 24px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04) !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  position: relative !important;
+}
+.card::before { display: none !important; } /* On enlève l'ancienne barre bleue du haut */
+.card:hover { transform: translateY(-4px) !important; box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important; }
+.card h3 { font-size: 1.25rem !important; font-weight: 700 !important; color: var(--primary) !important; margin-top: 16px !important; }
+.card-desc { color: var(--text-muted) !important; font-size: 0.95rem !important; line-height: 1.6 !important; }
+
+/* 8. Les Tags (Type, Montant, Deadline) */
+.tag {
+  border-radius: 6px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  padding: 6px 12px !important;
+  letter-spacing: 0.5px !important;
+}
+.tag.type { background: #EFF6FF !important; color: #1D4ED8 !important; }
+.tag.amount { background: #F0FDF4 !important; color: #166534 !important; }
+.tag.deadline { background: #FEF2F2 !important; color: #991B1B !important; }
+
+/* 9. Bouton des cartes */
+.card-btn {
+  background: var(--primary-light) !important;
+  border-radius: 8px !important;
+  padding: 14px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  transition: background 0.2s !important;
+}
+.card-btn:hover { background: #1D4ED8 !important; }
+
+/* 10. Le Footer (Pied de page) */
+footer {
+  background: var(--primary) !important;
+  border-radius: 24px 24px 0 0 !important;
+  margin-top: 60px !important;
+  padding: 60px 24px 30px !important;
+}
+
+/* Ajustements pour mobile (pour que la barre de recherche ne cache pas les stats) */
+@media (max-width: 768px) {
+  .hero { padding: 60px 16px 100px !important; border-radius: 0 0 20px 20px !important; margin-bottom: 60px !important; }
+  .hero h1 { font-size: 1.8rem !important; }
+  .hero .search-box { 
+    bottom: -60px !important; 
+    flex-direction: column !important; 
+    padding: 12px !important; 
+  }
+  .hero .search-box button { padding: 14px !important; }
+  .stats { margin-top: 80px !important; }
+}
 </style>
 </head>
 <body>
