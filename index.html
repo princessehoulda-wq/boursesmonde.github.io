@@ -1881,6 +1881,15 @@ footer {
   footer { width: calc(100% - 24px); border-radius: 28px !important; margin-bottom: 12px !important; }
   .card-photo { height: 140px; }
 }
+
+/* Accueil : pas de barre de recherche dans le bandeau (la recherche reste dans l'onglet Bourses) */
+.hero .search-box { display: none !important; }
+.hero { padding-bottom: 72px !important; margin-bottom: 8px !important; }
+.stats { margin-top: 40px !important; }
+@media (max-width: 768px) {
+  .hero { padding-bottom: 48px !important; }
+  .stats { margin-top: 28px !important; }
+}
 </style>
 
 </head>
@@ -6228,7 +6237,7 @@ function toggleThailandGuide() {
   }
 }
 
-function filtrerPays(pays) {
+function filtrerPays(pays, garderRecherche) {
   paysActif = pays;
   document.querySelectorAll('.country-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.pays === pays);
@@ -6340,6 +6349,7 @@ function filtrerPays(pays) {
     thailandBanner.style.display = (pays === 'Thaïlande') ? 'block' : 'none';
   }
   const searchBourses = document.getElementById('searchInput2');
+  if (searchBourses && !garderRecherche) searchBourses.value = '';   // un clic sur un pays repart d'une recherche vide
   const terme = searchBourses ? searchBourses.value.toLowerCase().trim() : '';
   appliquerFiltres(terme);
 }
@@ -6347,6 +6357,8 @@ function filtrerPays(pays) {
 function filtrer() {
   const searchBourses = document.getElementById('searchInput2');
   const terme = searchBourses ? searchBourses.value.toLowerCase().trim() : '';
+  // Une recherche texte porte sur tous les pays : on désactive le filtre pays actif
+  if (terme && paysActif !== 'Tous') { filtrerPays('Tous', true); return; }
   appliquerFiltres(terme);
 }
 
