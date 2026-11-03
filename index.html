@@ -17,7 +17,7 @@
 <meta name="trustpilot-one-time-domain-verification-id" content="2211b6cd-1087-4d6b-8f2d-94137c61272a"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#1a4d8f">
+<meta name="theme-color" content="#0B1F5C">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="icon" type="image/png" href="https://boursesmonde.org/favicon.png">
 <link rel="apple-touch-icon" href="https://boursesmonde.org/favicon.png"> 
@@ -31,6 +31,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6169639727086297"
      crossorigin="anonymous"></script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
   /* ============================================================
      RESET UNIVERSEL
@@ -1652,6 +1655,234 @@ footer {
   .stats { margin-top: 80px !important; }
 }
 </style>
+
+<style id="theme-main-dc">
+/* ============================================================
+   THEME « Main.dc » — surcharge visuelle uniquement
+   (aucun changement de structure, d'ID, de classe ou de JS)
+   ============================================================ */
+:root {
+  --primary: #0B1F5C !important;
+  --primary-light: #1D4ED8 !important;
+  --accent: #1D4ED8 !important;
+  --dark: #0B1F5C !important;
+  --gray: #3A4D8F !important;
+  --light: #E8F0FF !important;
+  --text-main: #0B1F5C !important;
+  --text-muted: #3A4D8F !important;
+  --bg-color: #ffffff !important;
+  --radius: 24px !important;
+  --shadow: 0 8px 24px rgba(11,31,92,.07) !important;
+  --shadow-lg: 0 20px 40px rgba(11,31,92,.18) !important;
+  --container-max: 1280px !important;
+  --container-padding: clamp(16px, 4vw, 56px) !important;
+  --font-head: 'Fraunces', Georgia, serif;
+}
+body { font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif !important; background: #fff !important; color: #0B1F5C !important; }
+a:hover { color: #1D4ED8; }
+
+/* ---------- HEADER ---------- */
+header { background: #fff !important; box-shadow: none !important; border-bottom: 1px solid #E8F0FF; }
+.header-inner { max-width: 1280px; padding: 20px var(--container-padding); flex-wrap: wrap; gap: 16px; }
+.logo { font-family: var(--font-head) !important; font-weight: 800 !important; font-size: 1.65rem !important; color: #0B1F5C !important; }
+.logo-icon { background: #1D4ED8 !important; border-radius: 50% !important; width: 38px !important; height: 38px !important; font-size: 1.05rem !important; }
+nav ul { gap: clamp(14px, 2vw, 28px); }
+nav a { color: #0B1F5C !important; font-weight: 500 !important; }
+nav a:hover { color: #1D4ED8 !important; }
+nav a.active { color: #1D4ED8 !important; border-bottom-color: #1D4ED8 !important; }
+
+/* ---------- HERO ---------- */
+.hero {
+  width: calc(100% - 48px); max-width: 1232px;
+  margin: 8px auto 24px !important;
+  background: #0B1F5C !important;
+  border-radius: 40px !important;
+  padding: 72px 56px 150px !important;
+  text-align: left !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+.hero::before {
+  content: '' !important; position: absolute !important;
+  top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important;
+  width: auto !important; height: auto !important;
+  border: 0 !important; box-shadow: none !important;
+  border-radius: 40px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='620' viewBox='0 0 720 620' fill='none'%3E%3Ccircle cx='400' cy='300' r='280' stroke='%232F5BE0' stroke-width='2'/%3E%3Ccircle cx='400' cy='300' r='200' stroke='%232F5BE0' stroke-width='2'/%3E%3Ccircle cx='400' cy='300' r='120' stroke='%232F5BE0' stroke-width='2'/%3E%3Cellipse cx='400' cy='300' rx='110' ry='280' stroke='%232F5BE0' stroke-width='2'/%3E%3Cpath d='M120 300H680' stroke='%232F5BE0' stroke-width='2'/%3E%3Cpath d='M130 420 Q400 180 670 380' stroke='%23fff' stroke-width='3' stroke-dasharray='3 10' stroke-linecap='round'/%3E%3Ccircle cx='130' cy='420' r='9' fill='%23fff'/%3E%3Ccircle cx='670' cy='380' r='9' fill='%2360A5FA'/%3E%3C/svg%3E") no-repeat right -120px top -80px / 720px 620px !important;
+  pointer-events: none;
+}
+.hero::after { display: none !important; }
+.hero h1, .hero p { position: relative; z-index: 1; }
+.hero h1 {
+  font-family: var(--font-head) !important;
+  font-size: clamp(2.2rem, 6.2vw, 4.75rem) !important;
+  font-weight: 800 !important; line-height: 1.04 !important;
+  letter-spacing: -0.5px;
+  max-width: 720px !important; margin: 0 0 24px 0 !important;
+}
+.hero p { color: #D5E3FF !important; font-size: clamp(1rem, 1.6vw, 1.25rem) !important; line-height: 1.5; max-width: 520px !important; margin: 0 !important; padding: 0 !important; opacity: 1 !important; }
+
+/* ---------- BARRES DE RECHERCHE ---------- */
+.search-box, .hero .search-box, .container .search-box {
+  background: #fff !important;
+  border: 2px solid #1D4ED8 !important;
+  border-radius: 28px !important;
+  padding: 20px !important;
+  box-shadow: 0 20px 40px rgba(11,31,92,.18) !important;
+  gap: 16px !important;
+  align-items: center !important;
+}
+.hero .search-box {
+  position: absolute !important; z-index: 5 !important;
+  left: 56px !important; right: 56px !important; bottom: -44px !important;
+  width: auto !important; max-width: none !important;
+  transform: none !important; margin: 0 !important;
+}
+.container .search-box { max-width: 100% !important; margin: 0 0 28px 0 !important; }
+.search-box input, .hero .search-box input {
+  border: 0 !important; border-bottom: 2px solid #D5E3FF !important;
+  border-radius: 0 !important; background: transparent !important;
+  padding: 10px 4px !important; min-height: 48px; color: #0B1F5C !important;
+  font-size: 1rem !important; transition: border-color .2s;
+}
+.search-box input:focus, .hero .search-box input:focus { border-bottom-color: #1D4ED8 !important; }
+.search-box input::placeholder { color: #7a8bbd !important; }
+.search-box button, .hero .search-box button {
+  background: #1D4ED8 !important; color: #fff !important;
+  border-radius: 999px !important; padding: 0 36px !important;
+  min-height: 56px !important; font-weight: 700 !important; font-size: 1.05rem !important;
+}
+.search-box button:hover, .hero .search-box button:hover { background: #0B1F5C !important; }
+
+/* ---------- STATS ---------- */
+.stats { margin-top: 84px !important; gap: 20px !important; }
+.stat { background: #F3F7FF !important; border: 0 !important; border-radius: 24px !important; box-shadow: none !important; padding: 26px 20px !important; }
+.stat-num { font-family: var(--font-head) !important; color: #1D4ED8 !important; font-size: clamp(1.8rem, 4vw, 2.75rem) !important; font-weight: 800 !important; }
+.stat-label { color: #3A4D8F !important; font-weight: 500 !important; }
+
+/* ---------- TITRES DE SECTION ---------- */
+.section-title { font-family: var(--font-head) !important; font-size: clamp(1.7rem, 4vw, 2.5rem) !important; font-weight: 800 !important; color: #0B1F5C !important; text-align: left !important; }
+.section-sub { color: #3A4D8F !important; font-size: 1.1rem !important; text-align: left !important; }
+
+/* ---------- FILTRES PAYS ---------- */
+.country-btn { background: #fff !important; border: 1.5px solid #D5E3FF !important; border-radius: 999px !important; color: #0B1F5C !important; font-weight: 500 !important; padding: 10px 18px !important; }
+.country-btn:hover { border-color: #1D4ED8 !important; color: #1D4ED8 !important; }
+.country-btn.active { background: #1D4ED8 !important; border-color: #1D4ED8 !important; color: #fff !important; }
+
+/* ---------- CARTES ---------- */
+.grid { gap: 24px !important; }
+.card {
+  background: #fff !important; border: 1.5px solid #D5E3FF !important;
+  border-radius: 24px !important; box-shadow: none !important;
+  padding: 24px !important; transform: none !important;
+  transition: border-color .2s !important;
+}
+.card:hover { border-color: #1D4ED8 !important; transform: none !important; box-shadow: none !important; }
+.card[style*="border-left"] { border-left: 4px solid #1D4ED8 !important; }
+.card::before { display: none !important; }
+.card h3 { font-family: var(--font-head) !important; font-size: 1.45rem !important; font-weight: 800 !important; color: #0B1F5C !important; margin-top: 0 !important; line-height: 1.2 !important; }
+.card-desc { color: #3A4D8F !important; }
+.card-country { color: #1D4ED8 !important; }
+.card-level { color: #3A4D8F !important; }
+
+/* Photo en haut des cartes (illustration CSS en repli, photo Wikipédia par-dessus) */
+.card-photo { position: relative; display: block; height: 170px; margin: -24px -24px 18px; flex-shrink: 0; overflow: hidden;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='170' viewBox='0 0 320 170'%3E%3Crect width='320' height='170' fill='%23DCE9FF'/%3E%3Ccircle cx='260' cy='40' r='22' fill='%23fff'/%3E%3Crect x='70' y='70' width='180' height='100' fill='%231D4ED8'/%3E%3Cpath d='M60 72 L160 28 L260 72Z' fill='%230B1F5C'/%3E%3Cg fill='%23fff'%3E%3Crect x='90' y='90' width='14' height='80'/%3E%3Crect x='128' y='90' width='14' height='80'/%3E%3Crect x='178' y='90' width='14' height='80'/%3E%3Crect x='216' y='90' width='14' height='80'/%3E%3C/g%3E%3C/svg%3E") center bottom / cover no-repeat; }
+.card:nth-child(3n+2) .card-photo { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='170' viewBox='0 0 320 170'%3E%3Crect width='320' height='170' fill='%230B1F5C'/%3E%3Ccircle cx='60' cy='40' r='18' fill='%237FB0FF'/%3E%3Cg fill='%231D4ED8'%3E%3Crect x='20' y='90' width='50' height='80'/%3E%3Crect x='80' y='50' width='44' height='120'/%3E%3Crect x='190' y='70' width='52' height='100'/%3E%3C/g%3E%3Cg fill='%23fff'%3E%3Crect x='134' y='30' width='46' height='140'/%3E%3Crect x='252' y='100' width='50' height='70'/%3E%3C/g%3E%3Cg fill='%230B1F5C'%3E%3Crect x='144' y='46' width='8' height='8'/%3E%3Crect x='162' y='46' width='8' height='8'/%3E%3Crect x='144' y='70' width='8' height='8'/%3E%3Crect x='162' y='70' width='8' height='8'/%3E%3C/g%3E%3C/svg%3E"); }
+.card:nth-child(3n) .card-photo { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='170' viewBox='0 0 320 170'%3E%3Crect width='320' height='170' fill='%23B9D2FF'/%3E%3Ccircle cx='50' cy='45' r='20' fill='%23fff'/%3E%3Crect x='40' y='90' width='240' height='80' fill='%23fff'/%3E%3Crect x='120' y='50' width='80' height='120' fill='%231D4ED8'/%3E%3Cpath d='M110 52 L160 20 L210 52Z' fill='%230B1F5C'/%3E%3Crect x='148' y='120' width='24' height='50' fill='%23fff'/%3E%3Cg fill='%231D4ED8'%3E%3Crect x='60' y='108' width='20' height='24'/%3E%3Crect x='92' y='108' width='20' height='24'/%3E%3Crect x='208' y='108' width='20' height='24'/%3E%3Crect x='240' y='108' width='20' height='24'/%3E%3C/g%3E%3C/svg%3E"); }
+.card-photo img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .45s; }
+.card-photo img.ok { opacity: 1; }
+.detail-photo { height: clamp(200px, 32vw, 360px); margin: 0 0 20px; border-radius: 24px; }
+
+/* Onglets Bourses / Prêts */
+[hidden] { display: none !important; }
+.tabs { display: flex; gap: 10px; flex-wrap: wrap; margin: 28px 0 0; }
+.tab-btn { border: 1.5px solid #D5E3FF; background: #fff; color: #0B1F5C; border-radius: 999px; padding: 12px 24px;
+  font-weight: 700; font-size: 1rem; cursor: pointer; min-height: 48px; transition: background .2s, border-color .2s, color .2s; }
+.tab-btn:hover { border-color: #1D4ED8; color: #1D4ED8; }
+.tab-btn[aria-selected="true"] { background: #1D4ED8; border-color: #1D4ED8; color: #fff; }
+
+/* Tags = puces arrondies */
+.tag, .tag.type, .tag.amount, .tag.deadline {
+  border-radius: 999px !important; padding: 6px 12px !important;
+  font-size: .8rem !important; font-weight: 500 !important; letter-spacing: 0 !important;
+  background: #E8F0FF !important; color: #1237A8 !important;
+}
+.tag.amount { background: #DCE9FF !important; color: #0B1F5C !important; }
+.tag.deadline { background: #fff !important; color: #0B1F5C !important; box-shadow: inset 0 0 0 1.5px #1D4ED8; }
+
+.card-btn { background: #1D4ED8 !important; color: #fff !important; border-radius: 999px !important; font-weight: 700 !important; padding: 12px 20px !important; min-height: 48px; }
+.card-btn:hover { background: #0B1F5C !important; }
+
+/* ---------- NEWSLETTER (bloc bleu façon Main.dc) ---------- */
+.newsletter { background: #1D4ED8 !important; border-radius: 40px !important; padding: clamp(32px, 6vw, 56px) !important; text-align: left !important; color: #fff !important; }
+.newsletter h2 { font-family: var(--font-head) !important; font-size: clamp(1.6rem, 4vw, 2.5rem) !important; font-weight: 800; line-height: 1.1 !important; max-width: 640px; }
+.newsletter p { color: #D5E3FF !important; opacity: 1 !important; margin-left: 0 !important; margin-right: 0 !important; }
+.newsletter form { margin: 0 !important; max-width: 560px !important; justify-content: flex-start !important; }
+.newsletter input { border-radius: 999px !important; }
+.newsletter button { background: #fff !important; color: #0B1F5C !important; border-radius: 999px !important; font-weight: 700 !important; padding: 0 32px !important; }
+.newsletter button:hover { background: #E8F0FF !important; }
+
+/* ---------- PAGES INTERNES ---------- */
+.page-hero {
+  position: relative; overflow: hidden;
+  width: calc(100% - 48px); max-width: 1232px; margin: 8px auto 0;
+  background: #0B1F5C !important; border-radius: 40px;
+  text-align: left !important; padding: clamp(36px, 6vw, 64px) clamp(24px, 5vw, 56px) !important;
+}
+.page-hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='720' height='620' viewBox='0 0 720 620' fill='none'%3E%3Ccircle cx='400' cy='300' r='280' stroke='%232F5BE0' stroke-width='2'/%3E%3Ccircle cx='400' cy='300' r='200' stroke='%232F5BE0' stroke-width='2'/%3E%3Ccircle cx='400' cy='300' r='120' stroke='%232F5BE0' stroke-width='2'/%3E%3Cellipse cx='400' cy='300' rx='110' ry='280' stroke='%232F5BE0' stroke-width='2'/%3E%3Cpath d='M120 300H680' stroke='%232F5BE0' stroke-width='2'/%3E%3Cpath d='M130 420 Q400 180 670 380' stroke='%23fff' stroke-width='3' stroke-dasharray='3 10' stroke-linecap='round'/%3E%3Ccircle cx='130' cy='420' r='9' fill='%23fff'/%3E%3Ccircle cx='670' cy='380' r='9' fill='%2360A5FA'/%3E%3C/svg%3E") no-repeat right -160px top -120px / 720px 620px; pointer-events: none; }
+.page-hero > * { position: relative; }
+.page-hero h1, .page-hero h2 { font-family: var(--font-head) !important; font-size: clamp(1.9rem, 5vw, 3.25rem) !important; font-weight: 800 !important; line-height: 1.08; margin: 0 0 12px; color: #fff; }
+.page-hero p { color: #D5E3FF !important; opacity: 1 !important; margin: 0 !important; max-width: 560px !important; }
+
+.content-box { border: 1.5px solid #D5E3FF; border-radius: 24px !important; box-shadow: none !important; }
+.content-box h2 { font-family: var(--font-head) !important; color: #0B1F5C !important; }
+.content-box p, .content-box li { color: #2B3F85 !important; }
+.contact-info-card { background: #F3F7FF !important; border: 0 !important; border-radius: 24px !important; box-shadow: none !important; }
+.form-group input, .form-group select, .form-group textarea { border: 1.5px solid #D5E3FF !important; border-radius: 16px !important; background: #fff; color: #0B1F5C; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #1D4ED8 !important; outline: none; }
+.submit-btn, .btn-official { background: #1D4ED8 !important; color: #fff !important; border-radius: 999px !important; box-shadow: none !important; font-weight: 700 !important; }
+.submit-btn:hover, .btn-official:hover { background: #0B1F5C !important; }
+.btn-back { border-radius: 999px !important; border: 1.5px solid #1D4ED8 !important; color: #1D4ED8 !important; background: #fff !important; }
+.btn-back:hover { background: #1D4ED8 !important; color: #fff !important; }
+.share-btn { border-radius: 999px !important; }
+.detail-card { border: 1.5px solid #D5E3FF !important; border-radius: 24px !important; box-shadow: none !important; }
+.detail-card::before { background: #1D4ED8 !important; }
+.detail-title { font-family: var(--font-head) !important; color: #0B1F5C !important; }
+.detail-info { background: #F3F7FF !important; border-radius: 16px !important; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0B1F5C !important; color: #D5E3FF !important;
+  width: calc(100% - 48px); max-width: 1232px;
+  margin: 72px auto 24px !important;
+  border-radius: 40px !important;
+  padding: clamp(32px, 5vw, 56px) clamp(20px, 4vw, 56px) 24px !important;
+}
+.footer-col h4 { font-family: var(--font-head) !important; font-size: 1.25rem !important; color: #fff !important; }
+.footer-col a:hover { color: #7FB0FF !important; }
+.footer-col .email-link { color: #7FB0FF !important; }
+.footer-bottom { border-top: 1px solid rgba(213,227,255,.2) !important; color: #D5E3FF; }
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .header-inner { padding: 12px 16px; }
+  .logo { font-size: 1.2rem !important; }
+  .logo-icon { width: 32px !important; height: 32px !important; }
+  .hero { width: calc(100% - 24px); margin: 4px auto 24px !important; border-radius: 28px !important; padding: 44px 24px 190px !important; }
+  .hero::before { border-radius: 28px !important; background-position: right -300px top -120px !important; opacity: .8; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 2.6rem) !important; }
+  .hero .search-box { left: 16px !important; right: 16px !important; bottom: -50px !important; flex-direction: column !important; padding: 16px !important; gap: 8px !important; align-items: stretch !important; }
+  .hero .search-box button, .search-box button { width: 100% !important; }
+  .search-box input, .hero .search-box input { width: 100% !important; }
+  .stats { margin-top: 90px !important; }
+  .page-hero { width: calc(100% - 24px); border-radius: 28px; }
+  .newsletter { border-radius: 28px !important; }
+  footer { width: calc(100% - 24px); border-radius: 28px !important; margin-bottom: 12px !important; }
+  .card-photo { height: 140px; }
+}
+</style>
+
 </head>
 <body>
 
@@ -1671,7 +1902,6 @@ footer {
         <li><a onclick="navigate('confidentialite')" data-nav="confidentialite">Confidentialité</a></li>
         <li><a onclick="navigate('contact')" data-nav="contact">Contact</a></li>
         <li><a onclick="navigate('avis')" data-nav="avis">Avis</a></li>
-        <li><a onclick="navigate('prets')" data-nav="prets">Prêts</a></li>
       </ul>
     </nav>
   </div>
@@ -1824,9 +2054,17 @@ footer {
 <div class="page" id="page-bourses">
 
   <section class="page-hero">
-    <h2>Toutes les bourses 2027-2028</h2>
-    <p>Filtrez par pays ou recherchez par mot-clé</p>
+    <h2 id="heroTitre">Toutes les bourses 2027-2028</h2>
+    <p id="heroSous">Filtrez par pays ou recherchez par mot-clé</p>
   </section>
+  <div class="container" style="padding-bottom:0">
+    <div class="tabs" role="tablist" aria-label="Bourses ou prêts">
+      <button class="tab-btn" id="tabBourses" role="tab" aria-selected="true" aria-controls="section-bourses" onclick="basculerOnglet('bourses', true)">🎓 Bourses</button>
+      <button class="tab-btn" id="tabPrets" role="tab" aria-selected="false" aria-controls="section-prets" onclick="basculerOnglet('prets', true)">💳 Prêts étudiants</button>
+    </div>
+  </div>
+
+  <div id="section-bourses" role="tabpanel" aria-labelledby="tabBourses">
 
                 <div class="ad-container">
           <div class="ad-label">Publicité</div>
@@ -4314,6 +4552,80 @@ footer {
     </div>
   </div>
 
+  </div><!-- /section-bourses -->
+
+  <div id="section-prets" role="tabpanel" aria-labelledby="tabPrets" hidden>
+
+  <div class="container">
+
+    <!-- AVERTISSEMENT IMPORTANT -->
+    <div style="background: #fee2e2; border-left: 6px solid #dc2626; padding: 20px 24px; border-radius: 12px; margin-bottom: 32px;">
+      <h3 style="color: #991b1b; margin-bottom: 12px; font-size: 1.15rem;">⚠️ AVERTISSEMENT IMPORTANT</h3>
+      <p style="color: #7f1d1d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 10px;">
+        <strong>Un prêt étudiant est un engagement financier à long terme.</strong>
+      </p>
+      <ul style="color: #7f1d1d; font-size: 0.92rem; line-height: 1.7; padding-left: 20px;">
+        <li>📊 <strong>Vérifiez les taux d'intérêt</strong> (fixes ou variables)</li>
+        <li>💰 <strong>Calculez le coût total</strong> avant de signer</li>
+        <li>📅 <strong>Évaluez votre capacité de remboursement</strong> après vos études</li>
+        <li>⚖️ <strong>Comparez plusieurs offres</strong> avant de vous engager</li>
+        <li>🌍 <strong>Vérifiez la législation</strong> de votre pays de résidence</li>
+        <li>📞 <strong>Consultez un conseiller financier</strong> si nécessaire</li>
+      </ul>
+      <p style="color: #7f1d1d; font-size: 0.9rem; margin-top: 12px; font-style: italic;">
+        BoursesMonde n'est PAS un prêteur. Nous recensons uniquement les organismes existants. Vérifiez toujours les conditions sur le site officiel.
+      </p>
+    </div>
+
+    <!-- FILTRES PAR NATIONALITÉ -->
+    <h2 class="section-title">🌍 Filtrer par nationalité</h2>
+    <p class="section-sub">Sélectionnez votre région pour voir les prêts disponibles</p>
+
+    <div class="country-filter" id="filterPrets">
+      <button class="country-btn active" data-region="Tous" onclick="filtrerPrets('Tous')">🌍 Tous</button>
+      <button class="country-btn" data-region="Afrique" onclick="filtrerPrets('Afrique')">🌍 Afrique</button>
+      <button class="country-btn" data-region="Europe" onclick="filtrerPrets('Europe')">🇪🇺 Europe</button>
+      <button class="country-btn" data-region="Asie" onclick="filtrerPrets('Asie')">🌏 Asie</button>
+      <button class="country-btn" data-region="Amérique" onclick="filtrerPrets('Amérique')">🌎 Amérique</button>
+      <button class="country-btn" data-region="International" onclick="filtrerPrets('International')">🌐 International</button>
+    </div>
+
+    <!-- GRILLE DES PRÊTS -->
+    <div class="grid" id="gridPrets"></div>
+
+    <!-- CONSEILS -->
+    <div class="content-box" style="margin-top: 50px;">
+      <h2>💡 Conseils avant de contracter un prêt</h2>
+
+      <h3 style="margin-top: 20px; color: var(--primary);">1. Évaluez le coût total</h3>
+      <p>Un prêt de 30 000 € à 8% sur 10 ans coûte <strong>~13 000 € d'intérêts</strong>. Le coût réel est de 43 000 €.</p>
+
+      <h3 style="margin-top: 20px; color: var(--primary);">2. Comparez les taux</h3>
+      <p>Un écart de 2% peut représenter <strong>plusieurs milliers d'euros</strong> sur la durée totale du prêt.</p>
+
+      <h3 style="margin-top: 20px; color: var(--primary);">3. Vérifiez les conditions de remboursement</h3>
+      <ul>
+        <li>📅 <strong>Période de grâce</strong> : Combien de temps avant de commencer à rembourser ?</li>
+        <li>📊 <strong>Montant mensuel</strong> : Est-il compatible avec votre futur salaire ?</li>
+        <li>⚖️ <strong>Clause de différé</strong> : Que se passe-t-il si vous ne trouvez pas d'emploi ?</li>
+      </ul>
+
+      <h3 style="margin-top: 20px; color: var(--primary);">4. Explorez d'abord les bourses</h3>
+      <p><strong>Un prêt est un dernier recours.</strong> Cherchez d'abord :</p>
+      <ul>
+        <li>🎓 Les bourses complètes (Stipendium Hungaricum, MEXT, Eiffel...)</li>
+        <li>🏫 Les aides des universités</li>
+        <li>🌍 Les programmes gouvernementaux</li>
+        <li>💼 Les jobs étudiants</li>
+      </ul>
+
+      <div class="info-note" style="margin-top: 24px;">
+        💛 <strong>Rappel :</strong> BoursesMonde est un projet bénévole. Nous ne gagnons rien sur ces prêts. Nous vous informons pour vous aider à faire un choix éclairé.
+      </div>
+    </div>
+
+  </div>
+  </div><!-- /section-prets -->
 </div>
 
 <!-- ============================================================
@@ -4493,83 +4805,6 @@ footer {
   <!-- ============================================================
      PAGE : PRÊTS ÉTUDIANTS
      ============================================================ -->
-<div class="page" id="page-prets">
-
-  <section class="page-hero">
-    <h2>Prêts Étudiants</h2>
-    <p>Financez vos études à l'étranger — Découvrez les prêts adaptés à votre nationalité</p>
-  </section>
-
-  <div class="container">
-
-    <!-- AVERTISSEMENT IMPORTANT -->
-    <div style="background: #fee2e2; border-left: 6px solid #dc2626; padding: 20px 24px; border-radius: 12px; margin-bottom: 32px;">
-      <h3 style="color: #991b1b; margin-bottom: 12px; font-size: 1.15rem;">⚠️ AVERTISSEMENT IMPORTANT</h3>
-      <p style="color: #7f1d1d; font-size: 0.95rem; line-height: 1.6; margin-bottom: 10px;">
-        <strong>Un prêt étudiant est un engagement financier à long terme.</strong>
-      </p>
-      <ul style="color: #7f1d1d; font-size: 0.92rem; line-height: 1.7; padding-left: 20px;">
-        <li>📊 <strong>Vérifiez les taux d'intérêt</strong> (fixes ou variables)</li>
-        <li>💰 <strong>Calculez le coût total</strong> avant de signer</li>
-        <li>📅 <strong>Évaluez votre capacité de remboursement</strong> après vos études</li>
-        <li>⚖️ <strong>Comparez plusieurs offres</strong> avant de vous engager</li>
-        <li>🌍 <strong>Vérifiez la législation</strong> de votre pays de résidence</li>
-        <li>📞 <strong>Consultez un conseiller financier</strong> si nécessaire</li>
-      </ul>
-      <p style="color: #7f1d1d; font-size: 0.9rem; margin-top: 12px; font-style: italic;">
-        BoursesMonde n'est PAS un prêteur. Nous recensons uniquement les organismes existants. Vérifiez toujours les conditions sur le site officiel.
-      </p>
-    </div>
-
-    <!-- FILTRES PAR NATIONALITÉ -->
-    <h2 class="section-title">🌍 Filtrer par nationalité</h2>
-    <p class="section-sub">Sélectionnez votre région pour voir les prêts disponibles</p>
-
-    <div class="country-filter" id="filterPrets">
-      <button class="country-btn active" data-region="Tous" onclick="filtrerPrets('Tous')">🌍 Tous</button>
-      <button class="country-btn" data-region="Afrique" onclick="filtrerPrets('Afrique')">🌍 Afrique</button>
-      <button class="country-btn" data-region="Europe" onclick="filtrerPrets('Europe')">🇪🇺 Europe</button>
-      <button class="country-btn" data-region="Asie" onclick="filtrerPrets('Asie')">🌏 Asie</button>
-      <button class="country-btn" data-region="Amérique" onclick="filtrerPrets('Amérique')">🌎 Amérique</button>
-      <button class="country-btn" data-region="International" onclick="filtrerPrets('International')">🌐 International</button>
-    </div>
-
-    <!-- GRILLE DES PRÊTS -->
-    <div class="grid" id="gridPrets"></div>
-
-    <!-- CONSEILS -->
-    <div class="content-box" style="margin-top: 50px;">
-      <h2>💡 Conseils avant de contracter un prêt</h2>
-
-      <h3 style="margin-top: 20px; color: var(--primary);">1. Évaluez le coût total</h3>
-      <p>Un prêt de 30 000 € à 8% sur 10 ans coûte <strong>~13 000 € d'intérêts</strong>. Le coût réel est de 43 000 €.</p>
-
-      <h3 style="margin-top: 20px; color: var(--primary);">2. Comparez les taux</h3>
-      <p>Un écart de 2% peut représenter <strong>plusieurs milliers d'euros</strong> sur la durée totale du prêt.</p>
-
-      <h3 style="margin-top: 20px; color: var(--primary);">3. Vérifiez les conditions de remboursement</h3>
-      <ul>
-        <li>📅 <strong>Période de grâce</strong> : Combien de temps avant de commencer à rembourser ?</li>
-        <li>📊 <strong>Montant mensuel</strong> : Est-il compatible avec votre futur salaire ?</li>
-        <li>⚖️ <strong>Clause de différé</strong> : Que se passe-t-il si vous ne trouvez pas d'emploi ?</li>
-      </ul>
-
-      <h3 style="margin-top: 20px; color: var(--primary);">4. Explorez d'abord les bourses</h3>
-      <p><strong>Un prêt est un dernier recours.</strong> Cherchez d'abord :</p>
-      <ul>
-        <li>🎓 Les bourses complètes (Stipendium Hungaricum, MEXT, Eiffel...)</li>
-        <li>🏫 Les aides des universités</li>
-        <li>🌍 Les programmes gouvernementaux</li>
-        <li>💼 Les jobs étudiants</li>
-      </ul>
-
-      <div class="info-note" style="margin-top: 24px;">
-        💛 <strong>Rappel :</strong> BoursesMonde est un projet bénévole. Nous ne gagnons rien sur ces prêts. Nous vous informons pour vous aider à faire un choix éclairé.
-      </div>
-    </div>
-
-  </div>
-</div>
   <!-- ============================================================
      PAGE : AVIS ET SUGGESTIONS
      ============================================================ -->
@@ -4806,7 +5041,7 @@ footer {
     </div>
   </div>
   <div class="footer-bottom">
-    © 2026 BoursesMonde — Projet bénévole et indépendant. Les dates limites sont indicatives, vérifiez toujours sur le site officiel.
+    © 2026 BoursesMonde — Projet bénévole et indépendant. Les dates limites sont indicatives, vérifiez toujours sur le site officiel. Photos : Wikipédia / Wikimedia Commons (licences libres).
   </div>
 </footer>
 
@@ -5500,6 +5735,131 @@ function construireFiltres() {
 /* ============================================================
    AFFICHAGE DES BOURSES
    ============================================================ */
+
+/* ============================================================
+   PHOTOS DES BOURSES (université > ville > pays) — Wikipédia / Wikimedia Commons
+   Chaque carte essaie une liste de pages Wikipédia ; sans photo valable,
+   l'illustration CSS de la carte reste affichée.
+   ============================================================ */
+const PHOTO_RULES = [
+  [/Eiffel/i,'Eiffel_Tower'],[/Boutmy/i,'Sciences_Po'],[/Polytechnique/i,'École_Polytechnique'],[/HEC Paris/i,'HEC_Paris'],
+  [/France Excellence/i,'Paris'],[/Vanier|PBEEE|Canada-ASEAN/i,'Parliament_Hill'],[/Pearson/i,'University_of_Toronto'],
+  [/\bUBC\b/,'University_of_British_Columbia'],[/Toronto Metropolitan|TMU/,'Toronto_Metropolitan_University'],
+  [/Fulbright/i,'Washington,_D.C.'],[/Knight-Hennessy/i,'Stanford_University'],[/Google PhD/i,'Googleplex'],
+  [/Microsoft Research/i,'Redmond,_Washington'],[/Chevening/i,'London'],[/Rhodes/i,'University_of_Oxford'],
+  [/Gates Cambridge/i,'University_of_Cambridge'],[/TU Munich|\bTUM\b/,'Technical_University_of_Munich'],
+  [/DAAD|B[öo]ll|Adenauer|Deutschlandstipendium|Hilde-Domin/i,'Berlin'],[/UCLouvain/,'Université_catholique_de_Louvain'],
+  [/VLIR|Master Mind|Flandre/i,'Ghent'],[/Erasmus Mundus/i,'Brussels'],[/ETH Zurich/,'ETH_Zurich'],[/EPFL/,'EPFL'],
+  [/UNIL/,'University_of_Lausanne'],[/UZH/,'University_of_Zurich'],[/\bHSG\b/,'University_of_St._Gallen'],
+  [/\bEHL\b/,'Ecole_hôtelière_de_Lausanne'],[/\bUSI\b/,'Università_della_Svizzera_italiana'],[/Swiss Government/i,'Bern'],
+  [/Orange Knowledge/i,'The_Hague'],[/Amsterdam/i,'Amsterdam'],[/Swedish Institute|Visby|Svenska|Kamprad|Wall|Adler|Hospitality|Sweden-America|Werth|Compricer|PAUSE/i,'Stockholm'],
+  [/\bKTH\b/,'KTH_Royal_Institute_of_Technology'],[/Chalmers/,'Chalmers_University_of_Technology'],
+  [/NTNU/,'Norwegian_University_of_Science_and_Technology'],[/Norwegian/i,'Oslo'],[/\bDTU\b/,'Technical_University_of_Denmark'],
+  [/Danish/i,'Copenhagen'],[/Finnish/i,'Helsinki'],[/Portuguese|Camões/i,'Lisbon'],[/Türkiye Bursları|TÜBİTAK/i,'Ankara'],
+  [/Malaysia International/i,'Kuala_Lumpur'],[/Universiti Putra/i,'Universiti_Putra_Malaysia'],[/\bUTM\b/,'Universiti_Teknologi_Malaysia'],
+  [/Monash/i,'Monash_University_Malaysia_Campus'],[/Thai Government|ODOS/i,'Bangkok'],
+  [/\bAIT\b/,'Asian_Institute_of_Technology'],[/JAIST/,'Japan_Advanced_Institute_of_Science_and_Technology'],
+  [/NAIST/,'Nara_Institute_of_Science_and_Technology'],[/SOKENDAI/,'Graduate_University_for_Advanced_Studies'],
+  [/MEXT|JASSO|JEES/,'Tokyo'],[/CSC|Chinese Government|Confucius|MOE Elite/,'Beijing'],[/Huawei|Tencent/i,'Shenzhen'],
+  [/Alibaba/i,'Hangzhou'],[/Xiaomi|Baidu|ByteDance/i,'Beijing'],[/Schwarzman/i,'Tsinghua_University'],
+  [/Yenching/i,'Peking_University'],[/Global Korea|GKS|Samsung/i,'Seoul'],[/\bKAIST\b/,'KAIST'],
+  [/SINGA|A\*STAR|Lee Kuan Yew/i,'Singapore'],[/\bNUS\b/,'National_University_of_Singapore'],[/\bNTU\b/,'Nanyang_Technological_University'],
+  [/Romanian Government/i,'Bucharest'],[/Greek Government|Onassis/i,'Athens'],[/Aristotle/i,'Aristotle_University_of_Thessaloniki'],
+  [/Kapodistrian/i,'National_and_Kapodistrian_University_of_Athens'],[/MAECI|Invest Your Talent/i,'Rome'],
+  [/Politecnico di Milano/i,'Polytechnic_University_of_Milan'],[/Spanish Government|AECID|Learn Africa|Santander|Caixa/i,'Madrid'],
+  [/IE University/,'IE_University'],[/Australia Awards/i,'Canberra'],[/\bUWA\b/,'University_of_Western_Australia'],
+  [/\bECU\b/,'Edith_Cowan_University'],[/Corvinus/i,'Corvinus_University_of_Budapest'],[/ELTE|Eötvös/i,'Eötvös_Loránd_University'],
+  [/Budapest University of Technology|\bBME\b/,'Budapest_University_of_Technology_and_Economics'],
+  [/Stipendium Hungaricum|Hungarian|FAO-/i,'Budapest'],[/Naruto University of Education/,'Naruto_University_of_Education'],
+  [/Otaru University of Commerce/,'Otaru_University_of_Commerce'],[/Tokyo University of Technology/,'Tokyo_University_of_Technology'],
+  [/Aichi University of Art/,'Aichi_University_of_the_Arts']
+];
+const PHOTO_VILLES_JP = [
+  [/Fukuoka/i,'Fukuoka'],[/Kobe/i,'Kobe'],[/Hiroshima/i,'Hiroshima'],[/Kyoto/i,'Kyoto'],[/Shinjuku/i,'Shinjuku'],
+  [/Himeji/i,'Himeji_Castle'],[/Kitakyushu/i,'Kitakyushu'],[/Kawasaki/i,'Kawasaki,_Kanagawa'],[/Kurashiki/i,'Kurashiki'],
+  [/Kagoshima|Satsumasendai/i,'Kagoshima'],[/Akita/i,'Akita,_Akita'],[/Ishikawa|Kanazawa/i,'Kanazawa,_Ishikawa'],
+  [/Aichi|Nagoya/i,'Nagoya'],[/Yamagata/i,'Yamagata,_Yamagata'],[/Oita/i,'Ōita,_Ōita'],[/Iwate/i,'Morioka'],
+  [/Okinawa/i,'Naha'],[/Shiga|Biwako/i,'Lake_Biwa'],[/Hokkaido|Kitami|Muroran|Otaru|Hakodate/i,'Sapporo'],
+  [/Nara/i,'Nara,_Nara'],[/Osaka|Kansai|Kindai|Setsunan|Ritsumeikan/i,'Osaka'],[/Tokyo|Tama|Hosei|Toyo|Senshu|Teikyo|Meiji|Keio|Waseda|Sophia/i,'Tokyo']
+];
+const PHOTO_POOLS = {
+  'France':['Paris','Lyon','Bordeaux'],'Canada':['Toronto','Montreal','Vancouver'],
+  'États-Unis':['New_York_City','Washington,_D.C.','San_Francisco'],'Royaume-Uni':['London','Oxford','Cambridge'],
+  'Allemagne':['Berlin','Munich','Heidelberg'],'Belgique':['Brussels','Leuven','Bruges'],
+  'Suisse':['Zürich','Lausanne','Geneva'],'Pays-Bas':['Amsterdam','Utrecht','Rotterdam'],
+  'Suède':['Stockholm','Gothenburg','Uppsala'],'Norvège':['Oslo','Bergen','Trondheim'],
+  'Danemark':['Copenhagen','Aarhus'],'Finlande':['Helsinki','Turku','Espoo'],'Portugal':['Lisbon','Porto','Coimbra'],
+  'Turquie':['Istanbul','Ankara'],'Malaisie':['Kuala_Lumpur','Petronas_Towers','George_Town,_Penang'],
+  'Thaïlande':['Bangkok','Chiang_Mai'],'Japon':['Tokyo','Kyoto','Osaka','Mount_Fuji','Nagoya','Fukuoka','Sapporo','Hiroshima','Kobe','Yokohama'],
+  'Chine':['Beijing','Shanghai','Shenzhen','Hangzhou','Guangzhou'],'Corée du Sud':['Seoul','Busan','Daejeon'],
+  'Singapour':['Singapore','Marina_Bay_Sands'],'Roumanie':['Bucharest','Cluj-Napoca'],'Grèce':['Athens','Thessaloniki'],
+  'Italie':['Rome','Milan','Bologna','Florence'],'Espagne':['Madrid','Barcelona','Valencia'],
+  'Australie':['Sydney','Melbourne','Perth,_Western_Australia'],'Hongrie':['Budapest','Debrecen','Szeged'],
+  'Union Européenne':['Brussels','Strasbourg'],'International':['United_Nations_Headquarters','Geneva','Palace_of_Nations']
+};
+function photoHash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
+function photoUniversite(titre) {
+  let m = titre.match(/^University of (\p{Lu}[\p{L}'’-]*)/u);
+  if (m) return 'University of ' + m[1];
+  m = titre.match(/^((?:\p{Lu}[\p{L}'’.-]*\s){1,4}?(?:University of Technology|Institute of Technology|University|Institute|College))(?=\s|$)/u);
+  return m ? m[1] : null;
+}
+function photoTitres(b) {
+  const out = [];
+  const add = x => { if (x && !out.includes(x)) out.push(x); };
+  const r = PHOTO_RULES.find(([re]) => re.test(b.titre));
+  if (r) add(r[1]); else add(photoUniversite(b.titre));
+  if (b.pays === 'Japon') { const v = PHOTO_VILLES_JP.find(([re]) => re.test(b.titre)); if (v) add(v[1]); }
+  const pool = PHOTO_POOLS[b.pays] || PHOTO_POOLS['International'];
+  const h = photoHash(b.titre);
+  add(pool[h % pool.length]); add(pool[(h + 1) % pool.length]);
+  return out.slice(0, 4);
+}
+function photoAttr(b) { return photoTitres(b).join('|').replace(/&/g, '&amp;').replace(/"/g, '&quot;'); }
+
+const _wikiMem = {};
+function wikiImage(titre) {
+  if (_wikiMem[titre]) return _wikiMem[titre];
+  const cle = 'bmphoto:' + titre;
+  try { const c = localStorage.getItem(cle); if (c !== null) return (_wikiMem[titre] = Promise.resolve(c || null)); } catch (e) {}
+  const estJpg = s => s && /\.jpe?g(\?|$)/i.test(s);
+  _wikiMem[titre] = fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(titre.replace(/ /g, '_')))
+    .then(r => { if (r.status === 404) return { vide: true }; return r.ok ? r.json() : null; })
+    .then(d => {
+      if (!d) return null;                                  // erreur réseau : on ne mémorise rien
+      let u = null;
+      if (!d.vide) {
+        const th = d.thumbnail && d.thumbnail.source, og = d.originalimage && d.originalimage.source;
+        if (estJpg(th)) u = th.replace(/\/\d+px-/, '/500px-'); else if (estJpg(og)) u = og;
+      }
+      try { localStorage.setItem(cle, u || ''); } catch (e) {}
+      return u;
+    })
+    .catch(() => null);
+  return _wikiMem[titre];
+}
+function chargerPhotos(racine) {
+  const els = (racine || document).querySelectorAll('.card-photo[data-wiki]:not([data-done])');
+  const aller = async el => {
+    el.dataset.done = '1';
+    for (const t of el.dataset.wiki.split('|').filter(Boolean)) {
+      const u = await wikiImage(t);
+      if (!u) continue;
+      const ok = await new Promise(res => {
+        const img = new Image(); img.alt = ''; img.decoding = 'async';
+        img.onload = () => { el.appendChild(img); requestAnimationFrame(() => img.classList.add('ok')); res(true); };
+        img.onerror = () => { if (!img._r) { img._r = 1; img.src = u.replace(/\/\d+px-/, '/320px-'); } else res(false); };
+        img.src = u;
+      });
+      if (ok) return;
+    }
+  };
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { io.unobserve(e.target); aller(e.target); } }), { rootMargin: '300px' });
+    els.forEach(el => io.observe(el));
+  } else els.forEach(aller);
+}
+
 function afficherBourses(liste) {
   const grid = document.getElementById('boursesGrid');
   if (!grid) return;
@@ -5514,6 +5874,7 @@ function afficherBourses(liste) {
 
   grid.innerHTML = liste.map(b => `
     <article class="card">
+      <div class="card-photo" data-wiki="${photoAttr(b)}" aria-hidden="true"></div>
       <div class="card-top">
         <span class="flag">${b.drapeau}</span>
         <div>
@@ -5540,6 +5901,7 @@ function afficherBourses(liste) {
       <button class="card-btn" onclick="ouvrirBourseParSlug('${b.slug}')">Voir les détails →</button>
     </article>
   `).join('');
+  chargerPhotos(grid);
 }
   
 function toggleGuideHongrie() {
@@ -6103,6 +6465,7 @@ function ouvrirBourseParSlug(slug) {
   if (!container) return;
 
   container.innerHTML = `
+    <div class="card-photo detail-photo" data-wiki="${photoAttr(b)}" aria-hidden="true"></div>
     <div class="detail-card">
       <div class="detail-header">
         <span class="detail-flag">${b.drapeau}</span>
@@ -6165,6 +6528,8 @@ function ouvrirBourseParSlug(slug) {
     </div>
   `;
 
+  chargerPhotos(container);
+
   const newHash = '#bourse-' + b.slug;
   if (history.replaceState) history.replaceState(null, '', newHash);
   else window.location.hash = 'bourse-' + b.slug;
@@ -6222,6 +6587,8 @@ function partagerWhatsApp(slug, titre) {
    NAVIGATION SPA
    ============================================================ */
 function navigate(pageId) {
+  let onglet = 'bourses';
+  if (pageId === 'prets') { pageId = 'bourses'; onglet = 'prets'; }
   if (!PAGES_VALIDES.includes(pageId)) pageId = 'accueil';
 
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -6239,8 +6606,27 @@ function navigate(pageId) {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  if (history.replaceState) history.replaceState(null, '', '#' + pageId);
-  else window.location.hash = pageId;
+  basculerOnglet(onglet, false);
+  const hashId = (onglet === 'prets') ? 'prets' : pageId;
+  if (history.replaceState) history.replaceState(null, '', '#' + hashId);
+  else window.location.hash = hashId;
+}
+
+/* Onglets Bourses / Prêts (même page) */
+function basculerOnglet(nom, majHash) {
+  const sb = document.getElementById('section-bourses');
+  const sp = document.getElementById('section-prets');
+  if (!sb || !sp) return;
+  const prets = (nom === 'prets');
+  sb.hidden = prets; sp.hidden = !prets;
+  const tb = document.getElementById('tabBourses'), tp = document.getElementById('tabPrets');
+  if (tb) tb.setAttribute('aria-selected', prets ? 'false' : 'true');
+  if (tp) tp.setAttribute('aria-selected', prets ? 'true' : 'false');
+  const h = document.getElementById('heroTitre'), p = document.getElementById('heroSous');
+  if (h) h.textContent = prets ? 'Prêts Étudiants' : 'Toutes les bourses 2027-2028';
+  if (p) p.textContent = prets ? "Financez vos études à l'étranger — Découvrez les prêts adaptés à votre nationalité" : 'Filtrez par pays ou recherchez par mot-clé';
+  if (majHash && history.replaceState) history.replaceState(null, '', prets ? '#prets' : '#bourses');
+  if (!prets) chargerPhotos(sb);
 }
 
 function navigateVersPays(pays) {
