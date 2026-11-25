@@ -1890,6 +1890,58 @@ footer {
   .hero { padding-bottom: 48px !important; }
   .stats { margin-top: 28px !important; }
 }
+
+/* ---------- SIGNALEMENT ---------- */
+.report-link { display: block; width: 100%; margin: 10px 0 0; padding: 6px 4px; background: none; border: 0; color: #3A4D8F;
+  font: inherit; font-size: .85rem; text-align: center; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.report-link:hover { color: #1D4ED8; }
+.report-link.done { color: #15803d; text-decoration: none; cursor: default; }
+.report-link-detail { display: inline-block; width: auto; margin: 0; padding: 14px 8px; font-size: .95rem; }
+.report-overlay { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: rgba(11,31,92,.6); }
+.report-overlay[hidden] { display: none !important; }
+.report-dialog { position: relative; width: 100%; max-width: 540px; max-height: 92vh; overflow-y: auto; background: #fff; color: #0B1F5C;
+  border-radius: 28px; padding: 32px 28px 26px; box-shadow: 0 30px 60px rgba(11,31,92,.35); }
+.report-dialog h2 { font-family: 'Fraunces', Georgia, serif; font-size: 1.6rem; font-weight: 800; margin: 0 28px 8px 0; }
+.report-close { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #E8F0FF;
+  color: #0B1F5C; font-size: 1rem; cursor: pointer; }
+.report-close:hover { background: #D5E3FF; }
+.report-bourse { margin: 0; font-weight: 700; line-height: 1.35; }
+.report-lien { margin: 6px 0 18px; font-size: .82rem; color: #3A4D8F; word-break: break-all; }
+.report-fieldset { border: 0; margin: 0 0 14px; padding: 0; }
+.report-fieldset legend { font-weight: 700; margin-bottom: 8px; padding: 0; }
+.report-opt { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; margin-bottom: 8px; border: 1.5px solid #D5E3FF;
+  border-radius: 16px; cursor: pointer; transition: border-color .2s, background .2s; }
+.report-opt:hover { border-color: #1D4ED8; }
+.report-opt:has(input:checked) { border-color: #1D4ED8; background: #F3F7FF; }
+.report-opt input { width: 20px; height: 20px; margin-top: 2px; accent-color: #1D4ED8; flex-shrink: 0; }
+.report-opt span { display: flex; flex-direction: column; gap: 2px; }
+.report-opt small { color: #3A4D8F; font-size: .82rem; }
+.report-field { margin-bottom: 12px; }
+.report-field label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 4px; }
+.report-field em { font-weight: 400; font-style: normal; color: #3A4D8F; }
+.report-field input, .report-field textarea { width: 100%; box-sizing: border-box; font: inherit; font-size: .95rem; color: #0B1F5C;
+  border: 1.5px solid #D5E3FF; border-radius: 14px; padding: 10px 14px; background: #fff; }
+.report-field input:focus, .report-field textarea:focus { outline: none; border-color: #1D4ED8; }
+.report-field textarea { resize: vertical; min-height: 70px; }
+.report-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.report-msg { min-height: 0; font-size: .9rem; margin: 4px 0 8px; }
+.report-msg.err { color: #b91c1c; background: #fef2f2; border-radius: 12px; padding: 10px 14px; }
+.report-msg a { color: #1D4ED8; text-decoration: underline; }
+.report-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.report-send { background: #1D4ED8; color: #fff; border: 0; border-radius: 999px; padding: 14px 28px; min-height: 48px; font: inherit;
+  font-weight: 700; cursor: pointer; }
+.report-send:hover { background: #0B1F5C; }
+.report-send:disabled { opacity: .6; cursor: wait; }
+.report-cancel { background: none; border: 1.5px solid #D5E3FF; color: #0B1F5C; border-radius: 999px; padding: 12px 22px; min-height: 48px;
+  font: inherit; font-weight: 500; cursor: pointer; }
+.report-cancel:hover { border-color: #1D4ED8; color: #1D4ED8; }
+.report-done { text-align: center; padding: 12px 0 4px; }
+.report-done[hidden] { display: none !important; }
+.report-done-icon { font-size: 2.6rem; }
+.report-done h3 { font-family: 'Fraunces', Georgia, serif; font-size: 1.4rem; margin: 8px 0; }
+.report-done p { color: #3A4D8F; margin: 0 0 18px; }
+@media (max-width: 520px) { .report-dialog { padding: 26px 18px 20px; border-radius: 22px; } }
 </style>
 
 </head>
@@ -5842,6 +5894,113 @@ function chargerPhotos(racine) {
   } else els.forEach(aller);
 }
 
+
+/* ============================================================
+   SIGNALEMENT D'UNE BOURSE (lien mort / mal renseigné)
+   Envoi via Formspree (même compte que le formulaire « Avis »).
+   Pour recevoir les signalements dans un formulaire dédié, remplacez REPORT_ENDPOINT.
+   ============================================================ */
+const REPORT_ENDPOINT = 'https://formspree.io/f/mjykorwp';
+const REPORT_EMAIL = 'boursesmonde@gmail.com';
+const REPORT_LABELS = { lien_mort: 'Lien mort', lien_incorrect: 'Lien mal renseigné', autre: 'Autre information erronée' };
+let _reportSlug = null, _reportFocus = null;
+
+function _reportStore(cle, val) {
+  try { if (val === undefined) return localStorage.getItem(cle); localStorage.setItem(cle, val); } catch (e) {}
+  return null;
+}
+function _reportMarquer(slug) {
+  document.querySelectorAll('[data-report]').forEach(el => {
+    if (el.getAttribute('data-report') === slug) { el.textContent = '✓ Signalé, merci'; el.classList.add('done'); }
+  });
+}
+function ouvrirSignalement(slug) {
+  const b = bourses.find(x => x.slug === slug);
+  const modal = document.getElementById('reportModal');
+  if (!b || !modal) return;
+  _reportSlug = slug; _reportFocus = document.activeElement;
+  document.getElementById('reportForm').reset();
+  document.getElementById('reportForm').hidden = false;
+  document.getElementById('reportDone').hidden = true;
+  document.getElementById('reportMsg').textContent = '';
+  document.getElementById('reportMsg').className = 'report-msg';
+  const send = document.getElementById('reportSend'); send.disabled = false; send.textContent = 'Envoyer le signalement';
+  document.getElementById('reportBourse').textContent = b.titre;
+  document.getElementById('reportLien').textContent = b.lien ? 'Lien actuel : ' + b.lien : 'Aucun lien renseigné pour cette bourse';
+  modal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  const premier = modal.querySelector('input[name="reportType"]'); if (premier) premier.focus();
+}
+function fermerSignalement() {
+  const modal = document.getElementById('reportModal');
+  if (!modal || modal.hidden) return;
+  modal.hidden = true;
+  document.body.style.overflow = '';
+  if (_reportFocus && _reportFocus.focus) { try { _reportFocus.focus(); } catch (e) {} }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fermerSignalement(); });
+document.addEventListener('click', e => { if (e.target && e.target.id === 'reportModal') fermerSignalement(); });
+
+async function envoyerSignalement(event) {
+  event.preventDefault();
+  const b = bourses.find(x => x.slug === _reportSlug);
+  const msg = document.getElementById('reportMsg');
+  const erreur = txt => { msg.textContent = txt; msg.className = 'report-msg err'; };
+  if (!b) return;
+
+  const choix = document.querySelector('input[name="reportType"]:checked');
+  if (!choix) return erreur('Choisissez le type de problème.');
+  const nouveau = document.getElementById('reportNouveau');
+  if (nouveau.value.trim() && (!nouveau.checkValidity() || !/^https?:\/\//i.test(nouveau.value.trim()))) return erreur('Le lien proposé doit commencer par http:// ou https://');
+  const email = document.getElementById('reportEmail');
+  if (email.value.trim() && !email.checkValidity()) return erreur('Adresse email invalide.');
+
+  const type = choix.value;
+  const fini = () => {
+    document.getElementById('reportForm').hidden = true;
+    document.getElementById('reportDone').hidden = false;
+    _reportMarquer(b.slug);
+  };
+
+  // Anti-spam : champ piège rempli (robot) -> on simule le succès sans rien envoyer
+  if (document.getElementById('reportHp').value) { fini(); return; }
+  // Anti-doublon : même bourse + même type déjà signalé depuis ce navigateur dans les dernières 24 h
+  const cle = 'bmreport:' + b.slug + ':' + type;
+  const dernier = parseInt(_reportStore(cle) || '0', 10);
+  if (dernier && Date.now() - dernier < 24 * 3600 * 1000) { fini(); return; }
+
+  const details = document.getElementById('reportDetails').value.trim();
+  const payload = {
+    _subject: '[BoursesMonde] Signalement : ' + REPORT_LABELS[type] + ' — ' + b.titre,
+    type_probleme: REPORT_LABELS[type],
+    bourse: b.titre,
+    pays: b.pays,
+    lien_actuel: b.lien || '(aucun)',
+    page_bourse: location.href.split('#')[0] + '#bourse-' + b.slug,
+    lien_propose: nouveau.value.trim() || '(non fourni)',
+    precisions: details || '(aucune)',
+    date: new Date().toISOString()
+  };
+  if (email.value.trim()) payload.email = email.value.trim();
+
+  const send = document.getElementById('reportSend');
+  send.disabled = true; send.textContent = 'Envoi…'; msg.textContent = ''; msg.className = 'report-msg';
+  try {
+    const r = await fetch(REPORT_ENDPOINT, {
+      method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+    });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    _reportStore(cle, String(Date.now()));
+    fini();
+  } catch (err) {
+    send.disabled = false; send.textContent = 'Envoyer le signalement';
+    const corps = Object.entries(payload).map(([k, v]) => k + ' : ' + v).join('\n');
+    const href = 'mailto:' + REPORT_EMAIL + '?subject=' + encodeURIComponent(payload._subject) + '&body=' + encodeURIComponent(corps);
+    msg.className = 'report-msg err';
+    msg.innerHTML = 'Envoi impossible pour le moment. Réessayez, ou <a href="' + href + '">envoyez-nous ce signalement par email</a>.';
+  }
+}
+
 function afficherBourses(liste) {
   const grid = document.getElementById('boursesGrid');
   if (!grid) return;
@@ -5882,6 +6041,7 @@ function afficherBourses(liste) {
         <span class="tag deadline">⏰ ${b.deadline}</span>
       </div>
       <button class="card-btn" onclick="ouvrirBourseParSlug('${b.slug}')">Voir les détails →</button>
+      <button type="button" class="report-link" data-report="${b.slug}" onclick="ouvrirSignalement('${b.slug}')">🚩 Signaler un lien mort ou erroné</button>
     </article>
   `).join('');
   chargerPhotos(grid);
@@ -6499,6 +6659,7 @@ function ouvrirBourseParSlug(slug) {
   <button class="btn-secondary" onclick="navigate('bourses')" style="display: inline-block; padding: 14px 28px; background: transparent; border: 2px solid #1a4d8f; color: #1a4d8f; border-radius: 10px; font-weight: 700; cursor: pointer;">
     ← Retour aux bourses
   </button>
+  <button type="button" class="report-link report-link-detail" data-report="${b.slug}" onclick="ouvrirSignalement('${b.slug}')">🚩 Signaler un problème avec cette bourse</button>
 </div>
 
       <div class="share-bar">
@@ -6732,5 +6893,52 @@ document.addEventListener('DOMContentLoaded', () => {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 </style>
+
+<!-- ===== SIGNALEMENT D'UNE BOURSE (lien mort / mal renseigné) ===== -->
+<div id="reportModal" class="report-overlay" hidden>
+  <div class="report-dialog" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+    <button type="button" class="report-close" onclick="fermerSignalement()" aria-label="Fermer">✕</button>
+    <h2 id="reportTitle">🚩 Signaler un problème</h2>
+    <p class="report-bourse" id="reportBourse"></p>
+    <p class="report-lien" id="reportLien"></p>
+
+    <form id="reportForm" onsubmit="envoyerSignalement(event)" novalidate>
+      <fieldset class="report-fieldset">
+        <legend>Quel est le problème ?</legend>
+        <label class="report-opt"><input type="radio" name="reportType" value="lien_mort"> <span><strong>🔗 Le lien est mort</strong><small>Page introuvable, erreur, site fermé ou inaccessible</small></span></label>
+        <label class="report-opt"><input type="radio" name="reportType" value="lien_incorrect"> <span><strong>🧭 Le lien est mal renseigné</strong><small>Mène vers un autre site, une autre bourse ou une page sans rapport</small></span></label>
+        <label class="report-opt"><input type="radio" name="reportType" value="autre"> <span><strong>📝 Autre information erronée</strong><small>Date limite, montant, conditions… (précisez ci-dessous)</small></span></label>
+      </fieldset>
+
+      <div class="report-field">
+        <label for="reportNouveau">Le bon lien, si vous le connaissez <em>(facultatif)</em></label>
+        <input type="url" id="reportNouveau" placeholder="https://…" autocomplete="off" maxlength="500">
+      </div>
+      <div class="report-field">
+        <label for="reportDetails">Précisions <em>(facultatif)</em></label>
+        <textarea id="reportDetails" rows="3" maxlength="800" placeholder="Ex. : le site affiche une erreur 404 depuis le 12 novembre."></textarea>
+      </div>
+      <div class="report-field">
+        <label for="reportEmail">Votre email <em>(facultatif, pour vous prévenir de la correction)</em></label>
+        <input type="email" id="reportEmail" placeholder="votre@email.com" autocomplete="email" maxlength="200">
+      </div>
+      <input type="text" id="reportHp" class="report-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div id="reportMsg" class="report-msg" role="status" aria-live="polite"></div>
+      <div class="report-actions">
+        <button type="submit" id="reportSend" class="report-send">Envoyer le signalement</button>
+        <button type="button" class="report-cancel" onclick="fermerSignalement()">Annuler</button>
+      </div>
+    </form>
+
+    <div id="reportDone" class="report-done" hidden>
+      <div class="report-done-icon">✅</div>
+      <h3>Merci pour votre signalement !</h3>
+      <p>Nous vérifierons le lien et corrigerons la fiche dès que possible.</p>
+      <button type="button" class="report-send" onclick="fermerSignalement()">Fermer</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
